@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>Ram Navami Wishes</title>
+
+  <!-- Google Font -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Tiro Devanagari Hindi', serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      overflow: hidden;
+      color: white;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 42px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 30px yellow; }
+    }
+
+    .container {
+      margin-top: 20px;
+    }
+
+    img {
+      width: 260px;
+      border-radius: 20px;
+      margin: 15px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.6);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px gold;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 24px;
+      animation: fade 3s infinite;
+    }
+
+    @keyframes fade {
+      0% {opacity: 0.5;}
+      50% {opacity: 1;}
+      100% {opacity: 0.5;}
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Background Music -->
+
+  <audio autoplay loop>
+    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" type="audio/wav">
+  </audio>
+
+  <h1>🌸 आपको राम नवमी की हार्दिक शुभकामनाएं देवी जी 🌸</h1>
+
+  <div class="container">
+    <!-- Cute Ram Image -->
+    <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Cute Ram">
+
+```
+<!-- Your Girl Image (Replace this file) -->
+<img src="your-girl-image.jpg" alt="My Girl">
+```
+
+  </div>
+
+  <div class="footer">
+    🙏 जय श्री राम 🙏
+  </div>
+
+  <!-- Floating Hearts Script -->
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
