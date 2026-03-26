@@ -3,6 +3,7 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ram Navami Wishes</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
@@ -14,13 +15,14 @@
       font-family: 'Tiro Devanagari Hindi', serif;
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       text-align: center;
-      overflow: hidden;
       color: white;
+      overflow-x: hidden;
     }
 
     h1 {
-      margin-top: 30px;
-      font-size: 42px;
+      margin-top: 20px;
+      font-size: 6vw; /* Responsive text */
+      padding: 0 10px;
       animation: glow 2s infinite alternate;
     }
 
@@ -29,22 +31,31 @@
       to { text-shadow: 0 0 30px yellow; }
     }
 
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+      padding: 10px;
+    }
+
     img {
-      width: 260px;
+      width: 90%;
+      max-width: 300px;
+      height: auto;
       border-radius: 20px;
-      margin: 15px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.6);
-      transition: transform 0.4s, box-shadow 0.4s;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      transition: transform 0.4s;
     }
 
     img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 40px gold;
+      transform: scale(1.05);
     }
 
     .footer {
-      margin-top: 20px;
-      font-size: 24px;
+      margin: 20px 10px;
+      font-size: 5vw;
       animation: fade 3s infinite;
     }
 
@@ -55,20 +66,40 @@
     }
 
     .heart {
-      position: absolute;
+      position: fixed;
       color: red;
-      font-size: 20px;
+      font-size: 18px;
       animation: float 6s linear infinite;
     }
 
     @keyframes float {
       0% {
-        transform: translateY(100vh) scale(1);
+        transform: translateY(100vh);
         opacity: 1;
       }
       100% {
-        transform: translateY(-10vh) scale(1.5);
+        transform: translateY(-10vh);
         opacity: 0;
+      }
+    }
+
+    /* Desktop adjustment */
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      .footer {
+        font-size: 22px;
+      }
+
+      .container {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      img {
+        width: 260px;
       }
     }
   </style>
@@ -79,9 +110,7 @@
 
   <h1>🌸 आपको राम नवमी की हार्दिक शुभकामनाएं देवी जी 🌸</h1>
 
-  <!-- Your Images -->
-
-  <div>
+  <div class="container">
     <img src="ram.jpg" alt="Shri Ram">
     <img src="girl.jpg" alt="My Girl">
   </div>
@@ -96,7 +125,7 @@
       heart.classList.add("heart");
       heart.innerHTML = "💖";
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      heart.style.fontSize = Math.random() * 10 + 15 + "px";
       document.body.appendChild(heart);
 
       setTimeout(() => {
@@ -104,7 +133,7 @@
       }, 6000);
     }
 
-    setInterval(createHeart, 300);
+    setInterval(createHeart, 400);
   </script>
 
 </body>
